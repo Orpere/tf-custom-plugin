@@ -21,8 +21,10 @@ ls -al ~/go/bin/
 - [x] Copy the custom plugin to the required path
 
 ```bash
+terraform
+mkdir -p /vagrant/terraform.d/plugins/linux_amd64/
+mkdir -p  ~/.terraform.d/plugins/
 ln -s $GOPATH/bin/terraform-provider-extip ~/.terraform.d/plugins/
-mkdir -p /vagrant/terraform.d/plugins/linux_amd64
 cp ~/go/bin/terraform-provider-extip /vagrant/terraform.d/plugins/linux_amd64/
 ```
 
@@ -30,6 +32,7 @@ cp ~/go/bin/terraform-provider-extip /vagrant/terraform.d/plugins/linux_amd64/
 
 ```bash
 cd /vagrant
+terraform init
 terraform apply
 ```
 
@@ -37,5 +40,5 @@ terraform apply
 
 ```bash
 exit
-vagrant destroy 
+vagrant destroy
 ```
